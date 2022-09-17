@@ -1,0 +1,56 @@
+body {
+    background-color: #ffebbd;
+}
+
+.title, .input, .list {
+    margin: 3rem;
+}
+
+.btn, .form-check-input:checked {
+    background: #ffd3a8;
+    border: #ffc39c 1px solid;
+}
+
+.input input, .input button {
+    margin-top: 1rem;
+}
+
+.checked {
+    text-decoration-line: line-through;
+    font-style: italic;
+    opacity: .75;
+}
+
+.list-none {
+    width: 100%; 
+    background-color:white;
+    padding: .5rem;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 10px;
+    color: #00000075;
+}
+.list .delete {
+    height: 20px;
+}
+.list .delete:hover, .reset:hover {
+    cursor: pointer;
+}
+
+.reset {
+    margin-top: 3rem;
+    color: red;
+}
+
+.container {
+    width: 100%;
+    background-color: #ffffff75;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
