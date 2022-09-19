@@ -9,11 +9,18 @@ const app = Vue.createApp({
         const localList = localStorage.getItem("toDoList");
         if(localList) this.list = JSON.parse(localStorage.getItem("toDoList"))
     },
+    watch: {
+        list: {
+            handler(){
+                this.onUpdate();
+            },
+            deep: true
+        }
+    },
     methods: {
         onChecked(id){
             // change the done status based on index
             this.list[id].done = !this.list[id].done;
-            this.onUpdate();
         },
         onAdd(){
             this.list.push({
@@ -23,14 +30,11 @@ const app = Vue.createApp({
 
             // reset toDoInput after the append
             this.toDoInput = null
-            this.onUpdate();
         },
         onDelete(id){
             // delete based on index
             this.list.splice(id, 1)
-            this.onUpdate();
         },
-        // should have been able to be called on watch but there's a problem
         onUpdate(){
             localStorage.setItem("toDoList", JSON.stringify(this.list))
         },
